@@ -140,11 +140,9 @@ const instagramChat = async (username, password,res) => {
 
     if (status) {
       
-      
-      
-      
-      const expoler =  await page.waitForSelector('svg[aria-label="Explore"]', { visible: true, timeout: 5000 });
-
+      console.log("Hello");
+      const expoler =  await page.waitForSelector('svg[aria-label="Explore"]', { visible: true, timeout: 10000 });
+      console.log(expoler);
       if(expoler){
         console.log("Login successful.");
         const result = { success: true, status: 'success',message: "Login successful." };

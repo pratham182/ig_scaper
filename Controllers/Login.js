@@ -34,13 +34,13 @@ const login = async (username, password,page) => {
     // Wait for login input fields and submit button to be available
     await page.screenshot({ path: 'screenshot1.png', fullPage: true });
 
-    await page.waitForSelector('input[name="username"]',{ visible: true, timeout: 5000 });
+    await page.waitForSelector('input[name="username"]');
     await page.screenshot({ path: 'screenshot2.png', fullPage: true });
 
-    await page.waitForSelector('input[name="password"]',{ visible: true, timeout: 5000 });
+    await page.waitForSelector('input[name="password"]');
     await page.screenshot({ path: 'screenshot3.png', fullPage: true });
-
-    await page.waitForSelector('button[type="submit"]',{ visible: true, timeout: 5000 });
+       
+    // await page.waitForSelector('button[type="submit"]');
   
     // Assign data and log in
     await page.screenshot({ path: 'screenshot4.png', fullPage: true });
