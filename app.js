@@ -135,13 +135,16 @@ const instagramChat = async (username, password,res) => {
     // Handling Dialog Box 1
     await handleDialogBox(page, 'notnow');
 
-    // Handling Dialog Box 2
-    await handleDialogBox(page, 'cancel');
+    // // Handling Dialog Box 2
+    // await handleDialogBox(page, 'cancel');
 
     if (status) {
       
-      console.log("Hello");
-      const expoler =  await page.waitForSelector('svg[aria-label="Explore"]', { visible: true, timeout: 10000 });
+      console.log(status);
+      const op=await page.waitForSelector("nav");
+      console.log(op);
+      const expoler =  await page.waitForSelector('svg[aria-label="Explore"]');
+      
       console.log(expoler);
       if(expoler){
         console.log("Login successful.");
@@ -149,6 +152,7 @@ const instagramChat = async (username, password,res) => {
         if (result.success) { // Check if the login was successful
           res.status(200).json(result); // Return the result object
         } else {
+
           res.status(500).json({ status: 'fail', message: result.message });
         }
       }
