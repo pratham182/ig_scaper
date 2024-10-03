@@ -32,28 +32,28 @@ const login = async (username, password,page) => {
 
    await page.goto("https://www.instagram.com/accounts/login/?next=%2F&source=mobile_nav");
     // Wait for login input fields and submit button to be available
-    await page.screenshot({ path: 'screenshot1.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot1.png', fullPage: true });
 
     await page.waitForSelector('input[name="username"]');
-    await page.screenshot({ path: 'screenshot2.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot2.png', fullPage: true });
 
     await page.waitForSelector('input[name="password"]');
-    await page.screenshot({ path: 'screenshot3.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot3.png', fullPage: true });
        
     // await page.waitForSelector('button[type="submit"]');
   
     // Assign data and log in
-    await page.screenshot({ path: 'screenshot4.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot4.png', fullPage: true });
 
     await page.type('input[name="username"]', username);
     
-    await page.screenshot({ path: 'screenshot5.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot5.png', fullPage: true });
 
     await page.type('input[name="password"]', password);
-    await page.screenshot({ path: 'screenshot6.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot6.png', fullPage: true });
 
     await page.click('button[type="submit"]');
-    await page.screenshot({ path: 'screenshot7.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot7.png', fullPage: true });
 
     return  true;
     
